@@ -3,11 +3,11 @@ package com.backend.CriaTernerosBackEnd.Modelo;
 import javax.persistence.*;
 
 @Entity
-public class Usuario {
+public class Usuario  {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
-    //@Column(nullable = false, name= "ID")
-    private int id;
+    //@Column(nullable = false, name= "ID_Usuario")
+    private int id_usuario;
     //@Column(nullable = false, name= "NOMBRE")
     private String nombre;
     //@Column(nullable = false, name= "APELLIDO")
@@ -28,9 +28,9 @@ public class Usuario {
     }
 
 
-    public Usuario(int id, String nombre, String apellido, String mail, int cedula,int telefono, String nomAcc, String contra) {
+    public Usuario(int id_usuario, String nombre, String apellido, String mail, int cedula,int telefono, String acceso, String contra) {
         super();
-        this.id = id;
+        this.id_usuario = id_usuario;
         this.nombre= nombre;
         this.apellido = apellido;
         this.cedula = cedula;
@@ -43,18 +43,18 @@ public class Usuario {
 
     @Override
     public Usuario clone() {
-        return new Usuario(getId(), getNombre(), getApellido(), getMail(), getCedula(), getTelefono(), getAcceso(), getContra());
+        return new Usuario(getId_usuario(), getNombre(), getApellido(), getMail(), getCedula(), getTelefono(), getAcceso(), getContra());
     }
 
 
 
-    public int getId() {
-        return id;
+    public int getId_usuario() {
+        return id_usuario;
     }
 
 
-    public void setId(int id) {
-        this.id = id;
+    public void setId(int id_usuario) {
+        this.id_usuario = id_usuario;
     }
 
 
