@@ -7,12 +7,12 @@ import javax.persistence.Id;
 import java.util.Date;
 
 @Entity
-public class Ternero {
+public class Ternero  {
 
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
-    //@Column(nullable = false, name= "ID")
-    private int id;
+    //@Column(nullable = false, name= "ID_ternero")
+    private int id_ternero;
 
     //@Column(nullable = false, name= "nroTernero")
     private String nroTernero;
@@ -52,10 +52,10 @@ public class Ternero {
     }
 
 
-    public Ternero(int id, String nroTernero, Date fechaNac, String parto, String imagen, double peso, double cantCal, int tiempo, Date fechaRef,
+    public Ternero(int id_ternero, String nroTernero, Date fechaNac, String parto, String imagen, double peso, double cantCal, int tiempo, Date fechaRef,
                    double valor, Date fechaDes, double pesoDes, double altura) {
         super();
-        this.id = id;
+        this.id_ternero = id_ternero;
         this.nroTernero= nroTernero;
         this.fechaNac = fechaNac;
         this.parto = parto;
@@ -81,13 +81,13 @@ public class Ternero {
 
 
     public int getId() {
-        return id;
+        return id_ternero;
     }
 
 
 
-    public void setId(int id) {
-        this.id = id;
+    public void setId(int id_ternero) {
+        this.id_ternero = id_ternero;
     }
 
     public String getNroTernero() {

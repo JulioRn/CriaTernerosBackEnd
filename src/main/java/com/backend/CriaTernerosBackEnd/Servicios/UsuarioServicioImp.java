@@ -12,18 +12,16 @@ public class UsuarioServicioImp implements UsuarioServicio{
     @Autowired
     private UsuarioRepositorio usuarioRepositorio;
 
-    @Override
     public Usuario saveUsuario(Usuario usuario) {
         return usuarioRepositorio.save(usuario);
     }
 
-    @Override
+  
     public List<Usuario> getAllUsuarios() {
         return usuarioRepositorio.findAll();
     }
 
-    @Override
-    public void removeUsuario(int id) {
-         usuarioRepositorio.deleteById(id);
+    public void removeUsuario(int id_usuario) {
+         usuarioRepositorio.deleteById(id_usuario);
     }
 }

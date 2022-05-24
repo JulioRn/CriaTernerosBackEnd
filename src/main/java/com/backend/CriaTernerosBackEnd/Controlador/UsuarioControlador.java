@@ -12,7 +12,7 @@ import java.util.List;
 @CrossOrigin
 public class UsuarioControlador {
     @Autowired
-    private UsuarioServicio usuarioServicio;
+	public UsuarioServicio usuarioServicio;
 
     @PostMapping("/agregar")
     public String add(@RequestBody Usuario usuario){
@@ -26,9 +26,9 @@ public class UsuarioControlador {
     }
 
 
-    @GetMapping("/eliminar/{id}")
-    public String remove(@PathVariable int id){
-        usuarioServicio.removeUsuario(id);
+    @GetMapping("/eliminar/{id_usuario}")
+    public String remove(@PathVariable int id_usuario){
+        usuarioServicio.removeUsuario(id_usuario);
         return "Usuario Eliminado";
     }
 }
