@@ -15,15 +15,4 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 @AutoConfigureMockMvc
 class CriaTernerosBackEndApplicationTests {
 
-	@Autowired
-	private MockMvc mvc;
-
-
-	@Test
-	public void contextLoads() throws Exception {
-
-		mvc.perform(MockMvcRequestBuilders.get("/usuario/guachera").accept(MediaType.APPLICATION_JSON))
-				.andExpect(status().isOk())
-				.andExpect(content().string(equalTo("Greetings from Spring Boot!")));
-	}
 }
