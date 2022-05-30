@@ -18,7 +18,7 @@ public class EnfermedadServicioImp implements EnfermedadServicio {
     }
 
 
-    public List<Enfermedad> getAllEnfermedads() {
+    public List<Enfermedad> getAllEnfermedad() {
         return enfermedadRepositorio.findAll();
     }
 
@@ -26,5 +26,7 @@ public class EnfermedadServicioImp implements EnfermedadServicio {
         enfermedadRepositorio.deleteById(id_enfermedad);
     }
 
-
+    public Enfermedad getEnfermedad(int id_enfermedad) {
+        return enfermedadRepositorio.getOne(id_enfermedad);
+    }
 }

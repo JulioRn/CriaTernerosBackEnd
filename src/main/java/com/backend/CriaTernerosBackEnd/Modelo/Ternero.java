@@ -24,8 +24,8 @@ public class Ternero {
 
 
     //@Column(nullable = false, name= "ENFERMEDAD")
-    @ManyToOne
-    @JoinColumn(name = "id_enfermedad", insertable = true, updatable = true)
+    @ManyToOne(cascade = CascadeType.REFRESH)
+    @JoinColumn(name = "id_enfermedad")
     private Enfermedad enfermedad;
 
     // @Column(nullable = false, name= "peso")

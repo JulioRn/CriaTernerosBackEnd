@@ -1,22 +1,24 @@
 package com.backend.CriaTernerosBackEnd.Modelo;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import java.util.Date;
 
 import javax.persistence.*;
 
+@JsonIgnoreProperties({"hibernateLazyInitializer"})
 @Entity
 public class Enfermedad {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(nullable = false, name= "ID_ENFERMEDAD")
     private int id_enfermedad;
 
-    @Column(nullable = false, name= "NOMBRE")
+
     private String nombre;
 
-    @Column(nullable = true, name= "OBSERVACIONES")
+
     private String observaciones;
 
 

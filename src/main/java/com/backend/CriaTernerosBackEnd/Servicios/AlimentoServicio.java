@@ -10,4 +10,5 @@ public interface AlimentoServicio {
     public List<Alimento> getAllAlimentos();
 
     public void removeAlimento(int id_alimento);
+
 }
