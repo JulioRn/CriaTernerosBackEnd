@@ -19,8 +19,11 @@ public class Ternero {
     //nacimiento
     // @Column(nullable = false, name= "fechNac")
     private Date fechaNac;
-    //@Column(nullable = false, name= "parto")
-    private String parto;
+
+
+    @ManyToOne(cascade = CascadeType.REFRESH)
+    @JoinColumn(name = "id_parto")
+    private Parto parto;
 
 
     //@Column(nullable = false, name= "ENFERMEDAD")
@@ -32,16 +35,7 @@ public class Ternero {
     private double peso;
 
     //calostrado
-    // @Column(nullable = false, name= "canCal")
-    private double cantCal;
-    // @Column(nullable = false, name= "tiempo")
-    private int tiempo;
 
-    //refractometria
-    // @Column(nullable = false, name= "fechaRef")
-    private Date fechaRef;
-    //  @Column(nullable = false, name= "valor")
-    private double valor;
 
     //desleche
     // @Column(nullable = false, name= "fechaDes")
@@ -56,8 +50,7 @@ public class Ternero {
     }
 
 
-    public Ternero(int id_ternero, String nroTernero, Date fechaNac, String parto, Enfermedad enfermedad, double peso, double cantCal, int tiempo, Date fechaRef,
-                   double valor, Date fechaDes, double pesoDes, double altura) {
+    public Ternero(int id_ternero, String nroTernero, Date fechaNac, Parto parto, Enfermedad enfermedad, double peso, Date fechaDes, double pesoDes, double altura) {
         super();
         this.id_ternero = id_ternero;
         this.nroTernero = nroTernero;
@@ -65,10 +58,6 @@ public class Ternero {
         this.parto = parto;
         this.peso = peso;
         this.enfermedad = enfermedad;
-        this.cantCal = cantCal;
-        this.tiempo = tiempo;
-        this.fechaRef = fechaRef;
-        this.valor = valor;
         this.fechaDes = fechaDes;
         this.pesoDes = pesoDes;
         this.altura = altura;
@@ -77,7 +66,7 @@ public class Ternero {
 
     @Override
     public Ternero clone() {
-        return new Ternero(getId(), getNroTernero(), getFechaNac(), getParto(), getEnfermedad(), getPeso(), getCantCal(), getTiempo(), getFechaRef(), getValor(), getFechaDes(), getPesoDes(), getAltura());
+        return new Ternero(getId(), getNroTernero(), getFechaNac(), getParto(), getEnfermedad(), getPeso(), getFechaDes(), getPesoDes(), getAltura());
     }
 
 
@@ -110,12 +99,12 @@ public class Ternero {
     }
 
 
-    public String getParto() {
+    public Parto getParto() {
         return parto;
     }
 
 
-    public void setParto(String parto) {
+    public void setParto(Parto parto) {
         this.parto = parto;
     }
 
@@ -139,45 +128,6 @@ public class Ternero {
         this.peso = peso;
     }
 
-
-    public double getCantCal() {
-        return cantCal;
-    }
-
-
-    public void setCantCal(double cantCal) {
-        this.cantCal = cantCal;
-    }
-
-
-    public int getTiempo() {
-        return tiempo;
-    }
-
-
-    public void setTiempo(int tiempo) {
-        this.tiempo = tiempo;
-    }
-
-
-    public Date getFechaRef() {
-        return fechaRef;
-    }
-
-
-    public void setFechaRef(Date fechaRef) {
-        this.fechaRef = fechaRef;
-    }
-
-
-    public double getValor() {
-        return valor;
-    }
-
-
-    public void setValor(double valor) {
-        this.valor = valor;
-    }
 
 
     public Date getFechaDes() {
