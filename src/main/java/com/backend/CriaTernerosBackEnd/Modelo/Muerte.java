@@ -10,10 +10,9 @@ public class Muerte {
 	  @Id
 	    @GeneratedValue(strategy= GenerationType.IDENTITY)
 
-	  //@Column(nullable = false, name= "id_refractometria")
-	    private int id_calostrado;
+	    private int id_muerte;
 
-	    //@Column(nullable = false, name= "tipoGuachera")
+
 	    private Date fecha;
 
 		private String causa;
@@ -21,28 +20,27 @@ public class Muerte {
 		private int dias;
 
 	@OneToOne(cascade = CascadeType.REFRESH)
-	@JoinColumn(name = "id_ternero")
-		private Ternero ternero;
+	private Ternero ternero;
 
 	public Muerte(){
 
 	}
 
-	public Muerte(int id_calostrado, Date fecha, String causa, int dias, Ternero ternero) {
+	public Muerte(int id_muerte, Date fecha, String causa, int dias, Ternero ternero) {
 		super();
-		this.id_calostrado = id_calostrado;
+		this.id_muerte = id_muerte;
 		this.fecha = fecha;
 		this.causa = causa;
 		this.dias = dias;
 		this.ternero = ternero;
 	}
 
-	public int getId_calostrado() {
-		return id_calostrado;
+	public int getId_muerte() {
+		return id_muerte;
 	}
 
-	public void setId_calostrado(int id_calostrado) {
-		this.id_calostrado = id_calostrado;
+	public void setId_muerte(int id_muerte) {
+		this.id_muerte = id_muerte;
 	}
 
 	public Date getFecha() {

@@ -1,5 +1,7 @@
 package com.backend.CriaTernerosBackEnd.Modelo;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import javax.persistence.*;
 import java.util.Date;
 
@@ -16,8 +18,7 @@ public class Ternero {
     //@Column(nullable = false, name= "nroTernero")
     private String nroTernero;
 
-    //nacimiento
-    // @Column(nullable = false, name= "fechNac")
+    @JsonFormat(pattern="dd/MM/yyyy")
     private Date fechaNac;
 
 
@@ -34,16 +35,15 @@ public class Ternero {
     // @Column(nullable = false, name= "peso")
     private double peso;
 
-    //calostrado
-
-
     //desleche
     // @Column(nullable = false, name= "fechaDes")
+    @JsonFormat(pattern="dd/MM/yyyy")
     private Date fechaDes;
     // @Column(nullable = false, name= "pesoDes")
     private double pesoDes;
     // @Column(nullable = false, name= "altura")
     private double altura;
+
 
 
     public Ternero() {
@@ -158,6 +158,5 @@ public class Ternero {
     public void setAltura(double altura) {
         this.altura = altura;
     }
-
 
 }
