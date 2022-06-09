@@ -1,5 +1,6 @@
 package com.backend.CriaTernerosBackEnd.Servicios;
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,8 +23,16 @@ public class TerneroServicioImp implements TerneroServicio{
         return terneroRepositorio.findAll();
     }
 
+    public List<Ternero> entreFechasTerneros(Date dateI, Date dateF) {
+        return terneroRepositorio.findByStartDateBetween(dateI, dateF);
+    }
+
     public void removeTernero(int id_ternero) {
         terneroRepositorio.deleteById(id_ternero);
+    }
+
+    public List<Ternero> ultimoMesTerneros(){
+        return terneroRepositorio.FindByTerneroActivoDate();
     }
 
 

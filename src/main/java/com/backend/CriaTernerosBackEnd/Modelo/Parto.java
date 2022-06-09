@@ -17,9 +17,6 @@ public class Parto{
     //@Column(nullable = false, name= "ID")
     private int id_parto;
 
-    //@Column(nullable = false, name= "fechaPar")
-    private Date fechaPar;
-
     //nacimiento
     // @Column(nullable = false, name= "tipoPar")
     private String tipoPar;
@@ -42,16 +39,6 @@ public class Parto{
 
     public void setId_parto(int id_parto) {
         this.id_parto = id_parto;
-    }
-
-
-    public Date getFechaPar() {
-        return fechaPar;
-    }
-
-
-    public void setFechaPar(Date fechaPar) {
-        this.fechaPar = fechaPar;
     }
 
 
@@ -99,10 +86,9 @@ public class Parto{
 
 
 
-    public Parto(int id_parto, Date fechaPar, String tipoPar, String sexo, int trazabilidad, String retencionPla) {
+    public Parto(int id_parto, String tipoPar, String sexo, int trazabilidad, String retencionPla) {
         super();
         this.id_parto = id_parto;
-        this.fechaPar = fechaPar;
         this.tipoPar = tipoPar;
         this.sexo = sexo;
         this.trazabilidad = trazabilidad;
@@ -112,7 +98,7 @@ public class Parto{
 
     @Override
     public Parto clone() {
-        return new Parto(getId_parto(), getFechaPar(), getTipoPar(), getSexo(), getTrazabilidad(), getRetencionPla());
+        return new Parto(getId_parto(), getTipoPar(), getSexo(), getTrazabilidad(), getRetencionPla());
     }
 
 

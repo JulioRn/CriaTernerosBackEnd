@@ -1,8 +1,10 @@
 package com.backend.CriaTernerosBackEnd.Controlador;
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -40,5 +42,17 @@ public class TerneroControlador {
         terneroServicio.removeTernero(id_ternero);
         return "Ternero Eliminado";
     }
+    @GetMapping("/entreFechasTerneros/{from}/{to}")
+    public List<Ternero> getTernerosBetween(@PathVariable Date from, @PathVariable Date to){
+        List<Ternero> ter= terneroServicio.entreFechasTerneros(from, to );
+
+        return ter;
+    }
+
+    @GetMapping("/currentMesTerneros")
+    public List<Ternero> list2(){
+        return terneroServicio.ultimoMesTerneros();
+    }
+
 
 }
