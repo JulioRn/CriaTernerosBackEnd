@@ -14,6 +14,7 @@ public class Calostrado {
 	    private int id_calostrado;
 
 	    //@Column(nullable = false, name= "tipoGuachera")
+
 	    private Date fecha;
 
 		private double nota;

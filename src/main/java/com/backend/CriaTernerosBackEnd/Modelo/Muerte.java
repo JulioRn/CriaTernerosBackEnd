@@ -1,5 +1,7 @@
 package com.backend.CriaTernerosBackEnd.Modelo;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import javax.persistence.*;
 import java.util.Date;
 
@@ -12,27 +14,23 @@ public class Muerte {
 
 	    private int id_muerte;
 
-
+		@JsonFormat(pattern="dd/MM/yyyy")
 	    private Date fecha;
 
 		private String causa;
 
 		private int dias;
 
-	@OneToOne(cascade = CascadeType.REFRESH)
-	private Ternero ternero;
-
 	public Muerte(){
 
 	}
 
-	public Muerte(int id_muerte, Date fecha, String causa, int dias, Ternero ternero) {
+	public Muerte(int id_muerte, Date fecha, String causa, int dias) {
 		super();
 		this.id_muerte = id_muerte;
 		this.fecha = fecha;
 		this.causa = causa;
 		this.dias = dias;
-		this.ternero = ternero;
 	}
 
 	public int getId_muerte() {
@@ -67,11 +65,4 @@ public class Muerte {
 		this.dias = dias;
 	}
 
-	public Ternero getTernero() {
-		return ternero;
-	}
-
-	public void setTernero(Ternero ternero) {
-		this.ternero = ternero;
-	}
 }
