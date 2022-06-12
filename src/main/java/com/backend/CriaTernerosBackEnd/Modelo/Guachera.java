@@ -20,21 +20,27 @@ public class Guachera {
 	    //@Column(nullable = false, name= "tipoGuachera")
 	    private String tipoGuachera;
 
+	private String nroGuachera;
+
+	private String descripcion;
+
 	public Guachera() {
 	}
 
 
 
-	public Guachera(int id_guachera, String tipoGuachera) {
+	public Guachera(int id_guachera, String tipoGuachera,  String nroGuachera,  String descripcion) {
 			super();
 			this.id_guachera = id_guachera;
 			this.tipoGuachera = tipoGuachera;
+			this.nroGuachera = nroGuachera;
+			this.descripcion = descripcion;
 		}
 
 	  
 		 @Override
 		    public Guachera clone() {
-		        return new Guachera(getId_guachera(), getTipoGuachera());
+		        return new Guachera(getId_guachera(), getTipoGuachera(), getNroGuachera(), getDescripcion());
 		    }
 
 	public int getId_guachera() {
@@ -52,6 +58,20 @@ public class Guachera {
 	public void setTipoGuachera(String tipoGuachera) {
 		this.tipoGuachera = tipoGuachera;
 	}
-	    
-	    
+
+	public String getNroGuachera() {
+		return nroGuachera;
+	}
+
+	public void setNroGuachera(String nroGuachera) {
+		this.nroGuachera = nroGuachera;
+	}
+
+	public String getDescripcion() {
+		return descripcion;
+	}
+
+	public void setDescripcion(String descripcion) {
+		this.descripcion = descripcion;
+	}
 }

@@ -1,5 +1,7 @@
 package com.backend.CriaTernerosBackEnd.Modelo;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import javax.persistence.*;
 import java.util.Date;
 
@@ -13,7 +15,7 @@ public class Refractrometria {
 	  //@Column(nullable = false, name= "id_refractometria")
 	    private int id_refractometria;
 
-	    //@Column(nullable = false, name= "tipoGuachera")
+		@JsonFormat(pattern="dd/MM/yyyy")
 	    private Date fecha;
 
 		private double nota;

@@ -45,7 +45,7 @@ public class MuerteControlador {
 	    }
 	    
 	    @GetMapping("/entreFechasMuerte/{from}/{to}")
-        public List<Muerte> getMuerteBetween(@PathVariable @DateTimeFormat (iso = DateTimeFormat.ISO.DATE_TIME) Date from,@PathVariable @DateTimeFormat (iso = DateTimeFormat.ISO.DATE_TIME) Date to){
+        public List<Muerte> getMuerteBetween(@PathVariable Date from,@PathVariable Date to){
     	List<Muerte> muer= muerteServicio.entreFechasMuerte(from, to );
     	
     	return muer;
