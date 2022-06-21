@@ -21,16 +21,19 @@ public class Muerte {
 
 		private int dias;
 
+	private String comentario;
+
 	public Muerte(){
 
 	}
 
-	public Muerte(int id_muerte, Date fecha, String causa, int dias) {
+	public Muerte(int id_muerte, Date fecha, String causa, int dias, String comentario) {
 		super();
 		this.id_muerte = id_muerte;
 		this.fecha = fecha;
 		this.causa = causa;
 		this.dias = dias;
+		this.comentario = comentario;
 	}
 
 	public int getId_muerte() {
@@ -65,4 +68,11 @@ public class Muerte {
 		this.dias = dias;
 	}
 
+	public String getComentario() {
+		return comentario;
+	}
+
+	public void setComentario(String comentario) {
+		this.comentario = comentario;
+	}
 }

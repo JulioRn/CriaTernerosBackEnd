@@ -50,13 +50,15 @@ public class Ternero {
 
     private String salud;
 
+    private String sexo;
+
 
 
     public Ternero() {
     }
 
 
-    public Ternero(int id_ternero, String nroTernero, Date fechaNac, Parto parto, Enfermedad enfermedad, Muerte muerte, double peso, Date fechaDes, double pesoDes, double altura, String salud) {
+    public Ternero(int id_ternero, String nroTernero, Date fechaNac, Parto parto, Enfermedad enfermedad, Muerte muerte, double peso, Date fechaDes, double pesoDes, double altura, String salud, String sexo) {
         super();
         this.id_ternero = id_ternero;
         this.nroTernero = nroTernero;
@@ -68,13 +70,14 @@ public class Ternero {
         this.pesoDes = pesoDes;
         this.altura = altura;
         this.salud = salud;
+        this.sexo = sexo;
         this.muerte = muerte;
     }
 
 
     @Override
     public Ternero clone() {
-        return new Ternero(getId(), getNroTernero(), getFechaNac(), getParto(), getEnfermedad(), getMuerte(), getPeso(), getFechaDes(), getPesoDes(), getAltura(), getSalud());
+        return new Ternero(getId(), getNroTernero(), getFechaNac(), getParto(), getEnfermedad(), getMuerte(), getPeso(), getFechaDes(), getPesoDes(), getAltura(), getSalud(), getSexo());
     }
 
 
@@ -181,5 +184,13 @@ public class Ternero {
 
     public void setMuerte(Muerte muerte) {
         this.muerte = muerte;
+    }
+
+    public String getSexo() {
+        return sexo;
+    }
+
+    public void setSexo(String sexo) {
+        this.sexo = sexo;
     }
 }

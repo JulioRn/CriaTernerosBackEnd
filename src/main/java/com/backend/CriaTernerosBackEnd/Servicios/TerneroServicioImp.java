@@ -2,6 +2,7 @@ package com.backend.CriaTernerosBackEnd.Servicios;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -21,6 +22,10 @@ public class TerneroServicioImp implements TerneroServicio{
 
     public List<Ternero> getAllTerneros() {
         return terneroRepositorio.findAll();
+    }
+
+    public Optional<Ternero> findById(int id_ternero){
+        return terneroRepositorio.findById(id_ternero);
     }
 
     public List<Ternero> entreFechasTerneros(Date dateI, Date dateF) {
