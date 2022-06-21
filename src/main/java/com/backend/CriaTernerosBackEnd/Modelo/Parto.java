@@ -21,8 +21,7 @@ public class Parto{
     // @Column(nullable = false, name= "tipoPar")
     private String tipoPar;
 
-    //@Column(nullable = false, name= "sexo")
-    private String sexo;
+
 
     //@Column(nullable = false, name= "trazabilidad")
     private int trazabilidad;
@@ -52,15 +51,6 @@ public class Parto{
     }
 
 
-    public String getSexo() {
-        return sexo;
-    }
-
-
-    public void setSexo(String sexo) {
-        this.sexo = sexo;
-    }
-
 
     public int getTrazabilidad() {
         return trazabilidad;
@@ -86,11 +76,10 @@ public class Parto{
 
 
 
-    public Parto(int id_parto, String tipoPar, String sexo, int trazabilidad, String retencionPla) {
+    public Parto(int id_parto, String tipoPar, int trazabilidad, String retencionPla) {
         super();
         this.id_parto = id_parto;
         this.tipoPar = tipoPar;
-        this.sexo = sexo;
         this.trazabilidad = trazabilidad;
         this.retencionPla = retencionPla;
     }
@@ -98,7 +87,7 @@ public class Parto{
 
     @Override
     public Parto clone() {
-        return new Parto(getId_parto(), getTipoPar(), getSexo(), getTrazabilidad(), getRetencionPla());
+        return new Parto(getId_parto(), getTipoPar(), getTrazabilidad(), getRetencionPla());
     }
 
 

@@ -2,6 +2,7 @@ package com.backend.CriaTernerosBackEnd.Controlador;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -34,6 +35,11 @@ public class TerneroControlador {
     @GetMapping("/getAll")
     public List<Ternero> list(){
         return terneroServicio.getAllTerneros();
+    }
+
+    @GetMapping("/getById/{id_ternero}")
+    public Optional<Ternero> list(@PathVariable int id_ternero){
+        return terneroServicio.findById(id_ternero);
     }
 
 

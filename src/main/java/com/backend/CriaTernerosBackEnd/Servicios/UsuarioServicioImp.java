@@ -16,12 +16,21 @@ public class UsuarioServicioImp implements UsuarioServicio{
         return usuarioRepositorio.save(usuario);
     }
 
-  
+
     public List<Usuario> getAllUsuarios() {
         return usuarioRepositorio.findAll();
     }
 
-    public void removeUsuario(int id_usuario) {
-         usuarioRepositorio.deleteById(id_usuario);
+    public Usuario buscarUsuario(String acceso, String contra) {
+        return   usuarioRepositorio.findByAccesoAndContra(acceso, contra);
+
+
     }
+
+    public void removeUsuario(int id_usuario) {
+        usuarioRepositorio.deleteById(id_usuario);
+    }
+
+
+
 }

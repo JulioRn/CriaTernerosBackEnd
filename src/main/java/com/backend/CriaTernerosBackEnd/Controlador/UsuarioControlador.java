@@ -31,4 +31,11 @@ public class UsuarioControlador {
         usuarioServicio.removeUsuario(id_usuario);
         return "Usuario Eliminado";
     }
+
+    @GetMapping("/buscarUsuario/{acceso}/{contra}")
+    public Usuario taerCuenta(@PathVariable String acceso, @PathVariable String contra){
+        return usuarioServicio.buscarUsuario(acceso, contra);
+
+    }
+
 }
