@@ -1,7 +1,10 @@
 package com.backend.CriaTernerosBackEnd.Controlador;
 
 import java.util.List;
+import java.util.Optional;
 
+import com.backend.CriaTernerosBackEnd.Modelo.Ternero;
+import com.backend.CriaTernerosBackEnd.Modelo.Usuario;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -34,11 +37,22 @@ public class RefractrometriaControlador {
 	        return refractrometriaServicio.getAllRefractrometrias();
 	    }
 
+	@GetMapping("/getById/{id_refractrometria}")
+	public Optional<Refractrometria> list(@PathVariable int id_refractrometria){
+		return refractrometriaServicio.findById(id_refractrometria);
+	}
+
 
 	    @GetMapping("/eliminar/{id_refractrometria}")
 	    public String remove(@PathVariable int id_refractrometria){
 	        refractrometriaServicio.removeRefractrometria(id_refractrometria);
 	        return "Refractrometria Eliminado";
 	    }
+
+	@GetMapping("/verificarTern/{id}")
+	public Refractrometria findByTernId(@PathVariable int id){
+		return refractrometriaServicio.findByTernId(id);
+
+	}
 
 }
