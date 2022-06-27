@@ -36,6 +36,10 @@ public class Ternero {
     @JoinColumn(name = "id_enfermedad")
     private Enfermedad enfermedad;
 
+    @ManyToOne(cascade = CascadeType.REFRESH)
+    @JoinColumn(name = "id_madre")
+    private Madre madre;
+
     // @Column(nullable = false, name= "peso")
     private double peso;
 
@@ -58,7 +62,7 @@ public class Ternero {
     }
 
 
-    public Ternero(int id_ternero, String nroTernero, Date fechaNac, Parto parto, Enfermedad enfermedad, Muerte muerte, double peso, Date fechaDes, double pesoDes, double altura, String salud, String sexo) {
+    public Ternero(int id_ternero, String nroTernero, Date fechaNac, Parto parto, Enfermedad enfermedad, Muerte muerte, Madre madre, double peso, Date fechaDes, double pesoDes, double altura, String salud, String sexo) {
         super();
         this.id_ternero = id_ternero;
         this.nroTernero = nroTernero;
@@ -72,13 +76,11 @@ public class Ternero {
         this.salud = salud;
         this.sexo = sexo;
         this.muerte = muerte;
+        this. madre = madre;
     }
 
 
-    @Override
-    public Ternero clone() {
-        return new Ternero(getId(), getNroTernero(), getFechaNac(), getParto(), getEnfermedad(), getMuerte(), getPeso(), getFechaDes(), getPesoDes(), getAltura(), getSalud(), getSexo());
-    }
+
 
 
     public int getId() {
@@ -192,5 +194,13 @@ public class Ternero {
 
     public void setSexo(String sexo) {
         this.sexo = sexo;
+    }
+
+    public Madre getMadre() {
+        return madre;
+    }
+
+    public void setMadre(Madre madre) {
+        this.madre = madre;
     }
 }
