@@ -18,6 +18,8 @@ public interface TerneroServicio {
 public List<Ternero> entreFechasTerneros(Date dateI, Date dateF);
     public List<Ternero> ultimoMesTerneros();
 
+    public List<Ternero> madresTern(int idMadre);
+
 
 
 }

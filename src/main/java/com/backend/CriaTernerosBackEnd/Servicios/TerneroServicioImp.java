@@ -32,6 +32,11 @@ public class TerneroServicioImp implements TerneroServicio{
         return terneroRepositorio.findByStartDateBetween(dateI, dateF);
     }
 
+    public List<Ternero> madresTern(int idMadre){
+        return terneroRepositorio.madresTern(idMadre);
+    }
+
+
     public void removeTernero(int id_ternero) {
         terneroRepositorio.deleteById(id_ternero);
     }
