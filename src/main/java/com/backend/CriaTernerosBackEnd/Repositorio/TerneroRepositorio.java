@@ -13,8 +13,10 @@ import java.util.List;
 @Repository
 public interface TerneroRepositorio extends JpaRepository<Ternero, Integer> {
     @Query("select d from Ternero d where d.fechaNac >= :from and d.fechaNac <= :to ")
-        //List<Deal> findByCreatedDateBetween(@Param("from") Date from, @Param("to") Date to);
     List<Ternero> findByStartDateBetween(@Param("from") Date from, @Param("to") Date to);
+
+    @Query(value = "select * from Ternero where id_madre = :idMadre", nativeQuery = true)
+    List<Ternero> madresTern(@Param("idMadre") int idMadre);
 
     @Query("select q from Ternero q where month(q.fechaNac) = month(CURRENT_TIMESTAMP) and year(q.fechaNac) = year(CURRENT_TIMESTAMP)")
     List<Ternero> FindByTerneroActivoDate();

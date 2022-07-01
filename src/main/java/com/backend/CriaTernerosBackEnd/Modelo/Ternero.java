@@ -56,13 +56,13 @@ public class Ternero {
 
     private String sexo;
 
-
+    private int trazabilidad;
 
     public Ternero() {
     }
 
 
-    public Ternero(int id_ternero, String nroTernero, Date fechaNac, Parto parto, Enfermedad enfermedad, Muerte muerte, Madre madre, double peso, Date fechaDes, double pesoDes, double altura, String salud, String sexo) {
+    public Ternero(int id_ternero, String nroTernero, Date fechaNac, Parto parto, Enfermedad enfermedad, Muerte muerte, Madre madre, double peso, Date fechaDes, double pesoDes, double altura, String salud, String sexo, int trazabilidad) {
         super();
         this.id_ternero = id_ternero;
         this.nroTernero = nroTernero;
@@ -77,6 +77,7 @@ public class Ternero {
         this.sexo = sexo;
         this.muerte = muerte;
         this. madre = madre;
+        this.trazabilidad = trazabilidad;
     }
 
 
@@ -202,5 +203,13 @@ public class Ternero {
 
     public void setMadre(Madre madre) {
         this.madre = madre;
+    }
+
+    public int getTrazabilidad() {
+        return trazabilidad;
+    }
+
+    public void setTrazabilidad(int trazabilidad) {
+        this.trazabilidad = trazabilidad;
     }
 }

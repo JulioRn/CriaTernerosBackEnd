@@ -60,5 +60,10 @@ public class TerneroControlador {
         return terneroServicio.ultimoMesTerneros();
     }
 
+    @GetMapping("/madreTern/{idMadre}")
+    public List<Ternero> madresTern(@PathVariable int idMadre){
+        return terneroServicio.madresTern(idMadre);
+    }
+
 
 }
